@@ -1,4 +1,6 @@
 import './globals.css'
+import Header from './(components)/Header'
+import AuthContext from './AuthContext'
 
 export default function RootLayout({
   children,
@@ -8,7 +10,12 @@ export default function RootLayout({
   return (
     <html lang='ko'>
       <head />
-      <body>{children}</body>
+      <body>
+        <AuthContext>
+          <Header />
+          {children}
+        </AuthContext>
+      </body>
     </html>
   )
 }
